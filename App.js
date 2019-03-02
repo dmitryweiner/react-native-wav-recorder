@@ -28,6 +28,8 @@ export default class App extends Component {
   };
 
   async componentDidMount() {
+    await this.checkPermissions();
+    await this.initAudioRecord();
     AudioRecord.on('data', data => {
       this.chunkReadingCycle++;
       if (this.chunkReadingCycle === 5) {
@@ -111,7 +113,7 @@ export default class App extends Component {
     console.log('audioFile', audioFile);
     const isExists = await RNFS.exists(audioFile);
     if (isExists) {
-      await this.saveFile(audioFile);
+      setTimeout(() => this.saveFile(audioFile), 1000);
     }
     this.setState({
       audioFile,
@@ -120,6 +122,7 @@ export default class App extends Component {
   };
 
   load = () => {
+    console.log('Trying to load file');
     return new Promise((resolve, reject) => {
       if (!this.state.audioFile) {
         return reject('file path is empty');
@@ -165,7 +168,6 @@ export default class App extends Component {
   };
 
   saveFile = async (temporaryFileName) => {
-    await this.checkPermissions();
     const dirIsOk = await this.checkDir();
     if (!dirIsOk) {
       return;
@@ -186,6 +188,9 @@ export default class App extends Component {
     return (
       <View style={styles.wrapper}>
         <View style={styles.container}>
+          <View style={styles.container}>
+            <Text style={{flex: 1, fontSize: 20, textAlign: 'center', marginTop: 20}}>WAV Recorder</Text>
+          </View>
           <View style={styles.field}>
             <Text style={styles.fieldLabel}>
               Sample rate (Hz)
@@ -193,7 +198,6 @@ export default class App extends Component {
             <Picker
               style={styles.fieldInput}
               selectedValue={this.state.sampleRate}
-              style={{height: 50, width: 100}}
               onValueChange={(itemValue) =>
                 this.setState({sampleRate: itemValue})
               }>
@@ -219,7 +223,7 @@ export default class App extends Component {
             />
           </View>
           <View style={styles.field}>
-            <Text style={{fontSize: 10}}>
+            <Text style={{fontSize: 12}}>
               {`${this.dir}/${this.state.targetFolder}`}
             </Text>
           </View>
@@ -258,6 +262,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   field: {
+    flex: 1,
     height: 50,
     paddingLeft: 20,
     flexDirection: 'row',
@@ -268,7 +273,7 @@ const styles = StyleSheet.create({
     width: 150
   },
   fieldInput: {
-    flex: 1
+    flex: 1,
   },
   row: {
     flexDirection: 'row',
