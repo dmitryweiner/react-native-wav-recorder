@@ -2,7 +2,7 @@
 
 Based on https://github.com/goodatlas/react-native-audio-record
 
-## Techmologies
+## Technologies
 
 * ES6
 
@@ -21,4 +21,4 @@ Based on https://github.com/goodatlas/react-native-audio-record
 
 ## Fresh build
 
-[1.6](android/app/release/wav-recorder-1.6.apk)
+[1.6](https://github.com/dmitryweiner/react-native-wav-recorder/raw/master/android/app/release/wav-recorder-1.6.apk)
