@@ -11,12 +11,10 @@
     "moment": "^2.24.0",
     "react": "16.6.1",
     "react-native": "0.57.7",
-    "react-native-audio-player-recorder": "https://github.com/Shinetechchina/react-native-audio-player-recorder",
-    "react-native-audio-record": "^0.2.0",
+    "react-native-audio": "^4.3.0",
     "react-native-fs": "^2.13.3",
     "react-native-permissions": "^1.1.1",
     "react-native-sound": "^0.10.9",
-    "react-native-video": "^4.1.0",
     "sanitize-filename": "^1.6.1"
   },
   "devDependencies": {

@@ -3,11 +3,9 @@ package com.wavrecorder;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.rnfs.RNFSPackage;
 import com.rnim.rn.audio.ReactNativeAudioPackage;
-import com.brentvatne.react.ReactVideoPackage;
+import com.rnfs.RNFSPackage;
 import com.zmxv.RNSound.RNSoundPackage;
-import com.goodatlas.audiorecord.RNAudioRecordPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -28,11 +26,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNFSPackage(),
             new ReactNativeAudioPackage(),
-            new ReactVideoPackage(),
-            new RNSoundPackage(),
-            new RNAudioRecordPackage()
+            new RNFSPackage(),
+            new RNSoundPackage()
       );
     }
 
