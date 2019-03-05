@@ -1,6 +1,7 @@
 # Simple useless wav recorder (another one)
 
-Based on https://github.com/goodatlas/react-native-audio-record
+Was based on https://github.com/goodatlas/react-native-audio-record , but after some long 
+and painfull debugging was moved to https://github.com/jsierles/react-native-audio
 
 ## Technologies
 
