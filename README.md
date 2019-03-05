@@ -15,7 +15,10 @@ Based on https://github.com/goodatlas/react-native-audio-record
 
 * Saves files [x]
  
-* You can choose destination [ ]
+* You can choose destination [x]
 
-* You can choose parameters of WAV file [ ]
+* You can choose parameters of WAV file [x]
 
+## Fresh build
+
+[1.6](android/app/release/wav-recorder-1.6.apk)
